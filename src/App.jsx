@@ -1,3 +1,47 @@
+import { useEffect, useState } from 'react';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Loader from './components/Loader';
+import { useTheme } from './hooks/useTheme';
+
+const LOADER_KEY = 'portfolio-visited';
+
+// Show the loader only on the first visit of a browser session.
+function shouldShowLoader() {
+  try {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+    return !sessionStorage.getItem(LOADER_KEY);
+  } catch {
+    return false;
+  }
+}
+
 export default function App() {
-  return <main className="container-x section">Portfolio coming soon.</main>;
+  const { theme, toggleTheme } = useTheme();
+  const [loading, setLoading] = useState(shouldShowLoader);
+
+  useEffect(() => {
+    if (!loading) return undefined;
+    const timer = setTimeout(() => {
+      setLoading(false);
+      try {
+        sessionStorage.setItem(LOADER_KEY, '1');
+      } catch {
+        // Ignore: the loader will simply show again next visit.
+      }
+    }, 1300);
+    return () => clearTimeout(timer);
+  }, [loading]);
+
+  return (
+    <MotionConfig reducedMotion="user">
+      <AnimatePresence>{loading && <Loader key="loader" />}</AnimatePresence>
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
+      <main id="main">
+        <div id="home" className="container-x flex min-h-screen items-center pt-16">
+          <p className="text-muted">Sections coming next.</p>
+        </div>
+      </main>
+    </MotionConfig>
+  );
 }
