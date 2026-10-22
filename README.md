@@ -2,7 +2,7 @@
 
 A personal CV and portfolio website that presents my profile, education, skills, projects, experience, and achievements in one responsive single-page site. It is built with React and Tailwind CSS, animated with Framer Motion, and deployed on Vercel.
 
-**Live site:** _add your Vercel link here_
+   **Live site:** https://portfolio-pi-sable-80.vercel.app/
 
 ## Student
 
