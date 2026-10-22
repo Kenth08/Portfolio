@@ -5,8 +5,15 @@ import Timeline from '../components/Timeline';
 
 export default function Education() {
   return (
-    <Section id="education" index="02" eyebrow="Education" title="Where I’m learning">
-      <div className="max-w-3xl">
+    <Section
+      id="education"
+      index="02"
+      eyebrow="Education"
+      title="Where I’m learning"
+      description="My academic background in information technology, from senior high school ICT to my BSIT degree."
+      split
+    >
+      <div>
         <Timeline
           items={education}
           icon={FiBookOpen}

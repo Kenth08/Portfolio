@@ -5,8 +5,15 @@ import Timeline from '../components/Timeline';
 
 export default function Experience() {
   return (
-    <Section id="experience" index="05" eyebrow="Experience" title="Where I’ve worked">
-      <div className="max-w-3xl">
+    <Section
+      id="experience"
+      index="05"
+      eyebrow="Experience"
+      title="Where I’ve worked"
+      description="Hands-on work building interfaces for real clients and teams."
+      split
+    >
+      <div>
         <Timeline
           items={experience}
           icon={FiBriefcase}

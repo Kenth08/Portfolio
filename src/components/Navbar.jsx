@@ -5,7 +5,8 @@ import { navLinks, profile } from '../data/portfolio';
 import { useActiveSection } from '../hooks/useActiveSection';
 import ThemeToggle from './ThemeToggle';
 
-const sectionIds = navLinks.map((link) => link.id);
+// 'home' is observed too, so no link is highlighted while the hero is in view.
+const sectionIds = ['home', ...navLinks.map((link) => link.id)];
 
 export default function Navbar({ theme, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +42,11 @@ export default function Navbar({ theme, onToggleTheme }) {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open ? 'border-b border-line/70 bg-bg/80 backdrop-blur-xl' : 'border-b border-transparent'
+        open
+          ? 'border-b border-line/70 bg-bg'
+          : scrolled
+            ? 'border-b border-line/70 bg-bg/80 backdrop-blur-xl'
+            : 'border-b border-transparent'
       }`}
     >
       <a

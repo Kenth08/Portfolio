@@ -51,7 +51,7 @@ function Preview({ project, className = '' }) {
         alt={`Screenshot of ${title}`}
         width="1200"
         height="750"
-        className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+        className="h-full w-full object-cover object-left-top transition-transform duration-700 ease-out group-hover:scale-105"
         fallback={<ScreenshotPlaceholder title={title} />}
       />
       {/* Hover overlay. The same links are always available below the image for touch and keyboard users. */}

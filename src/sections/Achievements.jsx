@@ -4,10 +4,14 @@ import Section from '../components/Section';
 import Reveal from '../components/Reveal';
 import SmartImage from '../components/SmartImage';
 
-function CredentialCard({ item, type }) {
+function CredentialCard({ item, type, wide = false }) {
   const Icon = type === 'Certificate' ? FiFileText : FiAward;
   const iconHeader = (
-    <div className="flex aspect-[16/7] items-center justify-center bg-gradient-to-br from-accent/20 via-elevated to-surface">
+    <div
+      className={`flex aspect-[16/7] h-full w-full items-center justify-center bg-gradient-to-br from-accent/20 via-elevated to-surface ${
+        wide ? 'sm:aspect-auto' : ''
+      }`}
+    >
       <span className="grid h-14 w-14 place-items-center rounded-2xl border border-accent/40 bg-surface text-accent">
         <Icon size={24} aria-hidden="true" />
       </span>
@@ -15,12 +19,14 @@ function CredentialCard({ item, type }) {
   );
 
   return (
-    <article className="card group flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5">
-      <div className="overflow-hidden border-b border-line">
+    <article
+      className={`card group h-full overflow-hidden ${wide ? 'flex flex-col sm:grid sm:grid-cols-[14rem_1fr]' : 'flex flex-col'} transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5`}
+    >
+      <div className={`overflow-hidden border-line ${wide ? 'border-b sm:border-b-0 sm:border-r' : 'border-b'}`}>
         <SmartImage
           src={item.image}
           alt={`${item.title} — ${type.toLowerCase()} image`}
-          className="aspect-[16/7] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="aspect-[16/7] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           fallback={iconHeader}
         />
       </div>
@@ -60,8 +66,7 @@ export default function Achievements() {
     ...certifications.map((item) => ({ item, type: 'Certificate' })),
   ];
 
-  const gridCols =
-    items.length === 1 ? 'max-w-md' : items.length === 2 ? 'sm:grid-cols-2 max-w-4xl' : 'sm:grid-cols-2 lg:grid-cols-3';
+  const single = items.length === 1;
 
   return (
     <Section
@@ -70,11 +75,12 @@ export default function Achievements() {
       eyebrow="Achievements"
       title="Achievements & certifications"
       description="Milestones from school and beyond. New certificates are added as I earn them."
+      split
     >
-      <div className={`grid gap-6 ${gridCols}`}>
+      <div className={`grid gap-6 ${single ? '' : 'sm:grid-cols-2'}`}>
         {items.map(({ item, type }, i) => (
           <Reveal key={item.title} delay={i * 0.08} className="h-full">
-            <CredentialCard item={item} type={type} />
+            <CredentialCard item={item} type={type} wide={single} />
           </Reveal>
         ))}
       </div>
