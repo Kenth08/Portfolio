@@ -12,6 +12,7 @@ import Achievements from './sections/Achievements';
 import GitHubCta from './sections/GitHubCta';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 import { useTheme } from './hooks/useTheme';
 
 const LOADER_KEY = 'portfolio-visited';
@@ -59,6 +60,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </MotionConfig>
   );
 }
