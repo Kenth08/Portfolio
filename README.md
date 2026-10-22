@@ -56,8 +56,8 @@ Requirements: [Node.js](https://nodejs.org/) 18 or newer.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Kenth08/<repository-name>.git
-cd <repository-name>
+git clone https://github.com/Kenth08/Portfolio.git
+cd Portfolio
 
 # 2. Install dependencies
 npm install
