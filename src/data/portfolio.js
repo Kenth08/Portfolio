@@ -5,7 +5,18 @@
  * Icons come from react-icons (https://react-icons.github.io/react-icons/).
  * To use a new icon, import it below and reference it in the data.
  */
-import { FaCss3Alt, FaDatabase, FaFacebook, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaLinkedin, FaReact } from 'react-icons/fa';
+import {
+  FaCss3Alt,
+  FaDatabase,
+  FaFacebook,
+  FaFigma,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaJava,
+  FaLinkedin,
+  FaReact,
+} from 'react-icons/fa';
 import { SiJavascript, SiTailwindcss, SiVercel } from 'react-icons/si';
 import { TbBrandFramerMotion } from 'react-icons/tb';
 import { VscVscode } from 'react-icons/vsc';

@@ -32,7 +32,9 @@ export default function Experience() {
                     </span>
                   </p>
                 </div>
-                <span className="chip w-fit shrink-0 border-accent/40 bg-accent/10 font-mono text-accent">{entry.period}</span>
+                <span className="chip w-fit shrink-0 border-accent/40 bg-accent/10 font-mono text-accent">
+                  {entry.period}
+                </span>
               </div>
               <p className="mt-4 leading-relaxed text-muted">{entry.description}</p>
               {entry.tags?.length > 0 && (

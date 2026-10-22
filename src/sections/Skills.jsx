@@ -47,20 +47,20 @@ export default function Skills() {
         {skillGroups.map(({ title, icon: GroupIcon, skills }, groupIndex) => (
           <Reveal key={title} delay={groupIndex * 0.1}>
             <div className="card group h-full p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5 sm:p-7">
-            <div className="mb-6 flex items-center justify-between">
-              <h3 className="flex items-center gap-3 text-lg font-bold">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-ink">
-                  <GroupIcon aria-hidden="true" />
-                </span>
-                {title}
-              </h3>
-              <span className="font-mono text-xs text-muted">{String(skills.length).padStart(2, '0')}</span>
-            </div>
-            <ul className="space-y-5">
-              {skills.map((skill, i) => (
-                <SkillBar key={skill.name} {...skill} delay={0.1 + i * 0.07} />
-              ))}
-            </ul>
+              <div className="mb-6 flex items-center justify-between">
+                <h3 className="flex items-center gap-3 text-lg font-bold">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-ink">
+                    <GroupIcon aria-hidden="true" />
+                  </span>
+                  {title}
+                </h3>
+                <span className="font-mono text-xs text-muted">{String(skills.length).padStart(2, '0')}</span>
+              </div>
+              <ul className="space-y-5">
+                {skills.map((skill, i) => (
+                  <SkillBar key={skill.name} {...skill} delay={0.1 + i * 0.07} />
+                ))}
+              </ul>
             </div>
           </Reveal>
         ))}

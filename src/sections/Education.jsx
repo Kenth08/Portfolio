@@ -21,7 +21,9 @@ export default function Education() {
           renderItem={(entry, i) => (
             <article className="card p-6 transition-all duration-300 hover:border-accent/50 sm:p-7">
               <div className="flex flex-wrap items-center gap-2">
-                <span className={`chip ${i === 0 ? 'border-accent/40 bg-accent/10 text-accent' : ''}`}>{entry.status}</span>
+                <span className={`chip ${i === 0 ? 'border-accent/40 bg-accent/10 text-accent' : ''}`}>
+                  {entry.status}
+                </span>
                 <span className="font-mono text-xs text-muted">{entry.period}</span>
               </div>
               <h3 className="mt-4 text-lg font-bold leading-snug sm:text-xl">{entry.degree}</h3>
