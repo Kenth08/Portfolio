@@ -6,6 +6,7 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Education from './sections/Education';
 import Skills from './sections/Skills';
+import Projects from './sections/Projects';
 import { useTheme } from './hooks/useTheme';
 
 const LOADER_KEY = 'portfolio-visited';
@@ -46,6 +47,7 @@ export default function App() {
         <About />
         <Education />
         <Skills />
+        <Projects />
       </main>
     </MotionConfig>
   );
