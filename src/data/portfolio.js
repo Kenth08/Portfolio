@@ -79,9 +79,9 @@ export const education = [
     highlights: ['Capstone project: E-Procurement Blockchain System'],
   },
   {
-    degree: 'Senior High School — ICT Strand',
+    degree: 'Senior High School',
     school: 'Southern Davao National High School',
-    period: 'Information and Communications Technology',
+    period: 'ICT Strand',
     status: 'Graduated',
     highlights: [],
   },

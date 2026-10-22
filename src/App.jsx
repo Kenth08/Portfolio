@@ -3,6 +3,8 @@ import { AnimatePresence, MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 import Hero from './sections/Hero';
+import About from './sections/About';
+import Education from './sections/Education';
 import { useTheme } from './hooks/useTheme';
 
 const LOADER_KEY = 'portfolio-visited';
@@ -40,6 +42,8 @@ export default function App() {
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main id="main">
         <Hero />
+        <About />
+        <Education />
       </main>
     </MotionConfig>
   );
