@@ -7,6 +7,11 @@ import About from './sections/About';
 import Education from './sections/Education';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
+import Experience from './sections/Experience';
+import Achievements from './sections/Achievements';
+import GitHubCta from './sections/GitHubCta';
+import Contact from './sections/Contact';
+import Footer from './components/Footer';
 import { useTheme } from './hooks/useTheme';
 
 const LOADER_KEY = 'portfolio-visited';
@@ -48,7 +53,12 @@ export default function App() {
         <Education />
         <Skills />
         <Projects />
+        <Experience />
+        <Achievements />
+        <GitHubCta />
+        <Contact />
       </main>
+      <Footer />
     </MotionConfig>
   );
 }
