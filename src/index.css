@@ -113,3 +113,11 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+@layer utilities {
+  .hero-grid {
+    background-image: linear-gradient(to right, rgb(var(--line) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--line) / 0.55) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}

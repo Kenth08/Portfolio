@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
+import Hero from './sections/Hero';
 import { useTheme } from './hooks/useTheme';
 
 const LOADER_KEY = 'portfolio-visited';
@@ -38,9 +39,7 @@ export default function App() {
       <AnimatePresence>{loading && <Loader key="loader" />}</AnimatePresence>
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main id="main">
-        <div id="home" className="container-x flex min-h-screen items-center pt-16">
-          <p className="text-muted">Sections coming next.</p>
-        </div>
+        <Hero />
       </main>
     </MotionConfig>
   );
