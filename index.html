@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenth Charles Repollo | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Kenth Charles Repollo, a 4th-year BSIT student at Davao del Norte State College building modern, responsive web applications with React."
+    />
+    <meta name="author" content="Kenth Charles Repollo" />
+    <meta name="theme-color" content="#0b0f14" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kenth Charles Repollo | Portfolio" />
+    <meta
+      property="og:description"
+      content="BSIT student and aspiring full-stack developer building modern, responsive web applications with React."
+    />
+    <meta property="og:image" content="/images/profile.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kenth Charles Repollo | Portfolio" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply the saved theme before first paint to avoid a flash -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

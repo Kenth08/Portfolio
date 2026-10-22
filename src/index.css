@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 247 248 250;
+    --surface: 255 255 255;
+    --elevated: 238 241 245;
+    --line: 220 225 232;
+    --ink: 15 23 32;
+    --muted: 82 94 110;
+    --accent: 13 128 116;
+    --accent-ink: 255 255 255;
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: 11 15 20;
+    --surface: 18 23 30;
+    --elevated: 26 33 42;
+    --line: 39 48 60;
+    --ink: 232 237 243;
+    --muted: 150 162 178;
+    --accent: 45 212 191;
+    --accent-ink: 6 30 27;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    @apply bg-accent/30;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface transition-colors duration-300;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 active:scale-[0.98];
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-accent-ink shadow-lg shadow-accent/20 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30;
+  }
+
+  .btn-ghost {
+    @apply btn border border-line bg-surface text-ink hover:-translate-y-0.5 hover:border-accent hover:text-accent;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-elevated px-3 py-1 text-xs font-medium text-muted;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-surface text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
